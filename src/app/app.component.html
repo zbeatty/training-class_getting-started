@@ -6,7 +6,7 @@
     <button class="app-icon-button" (click)="sidenav.toggle()">
       <i class="material-icons app-toolbar-menu">menu</i>
     </button>
-    Example App
+    Example App: {{ cardOutput }} - {{ annotationCardOutput }}
     <span class="app-toolbar-filler"></span>
   </md-toolbar>
   <div class="app-content">
@@ -14,4 +14,6 @@
       Hello App
     </md-card>
   </div>
+  <app-home-card [cardName]="'Hello Child Card'" (cardEvent)="cardOutputChanged($event);"></app-home-card>
+  <app-home-card-annotations [cardName]="'Hello Child Card 2'" (annotationCardEvent)="annotationCardOutputChanged($event);"></app-home-card-annotations>
 </md-sidenav-layout>
